@@ -7,7 +7,7 @@ include_once '_config/db.php';
 // dd($_SERVER['PHP_SELF']);
 
 spl_autoload_register(function ($class) {
-    include_once '_classes/' . $class . '.php';
+    include_once 'models/' . $class . '_model.php';
 });
 
 if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -19,7 +19,6 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 $all_pages = scandir('controllers');
 
 if (in_array($page . '_controller.php', $all_pages)) {
-    include_once 'models/' . $page . '_model.php';
     include_once 'controllers/' . $page . '_controller.php';
     include_once 'views/_layout.php';
 } else {

@@ -29,7 +29,7 @@ if (!isset($_SESSION['id'])) {
                         </select>
                     </div>
                     <div class="form-group mb-3">
-                    <label for="imageUpload" class="text-white-50">Select Tags:</label>
+                    <label class="text-white-50">Select Tags:</label>
                         <select class="form-control py-2 w-100" name="tags[]" multiple="multiple" required>    
                         <?php foreach ($tags as $tag): ?>
                                 <option value="<?= $tag['id'] ?>">
