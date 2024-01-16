@@ -1,0 +1,10 @@
+RewriteEngine on
+
+# Redirect to index.php for all requests except /assets/*
+RewriteCond %{REQUEST_URI} !^/Mouhcine-Essafi_Wiki/assets/
+RewriteRule ^ index.php [L]
+
+# Allow direct access to assets folder
+<IfModule mod_rewrite.c>
+    RewriteRule ^Mouhcine-Essafi_Wiki/assets/ - [L]
+</IfModule>
